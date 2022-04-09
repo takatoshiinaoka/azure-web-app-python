@@ -88,4 +88,4 @@ jobs:
           with:
             app-name: 'hol-azure-web-app-deploy'
             slot-name: 'staging1'
-            publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_B56F6390AFCE439EBAC9AB62073C994B }}
+            publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_1 }}
