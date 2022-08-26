@@ -1,0 +1,25 @@
+# Starter pipeline
+
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Visual Studio Enterprise サブスクリプション - MPN(稲岡)(ec360d9b-4b5f-48e3-995d-680431dd235c)'
+    appType: 'webAppLinux'
+    WebAppName: 'azuredevopsdemo'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    RuntimeStack: 'PYTHON|3.9'
+    StartupCommand: 'python manage.py runserver'
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
